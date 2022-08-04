@@ -1,0 +1,139 @@
+#include <iostream>
+#include <conio.h>
+#include <windows.h>
+#include <string.h>
+
+using namespace std;
+
+class Bank
+{
+private:
+    int64_t bank_account;
+    string bank_account_user_name;
+    string type;
+    float bank_balance;
+    float Send_Balance;
+public:
+    void setAccount()
+    {
+        cout << " Enter Your Account No. : ";
+        cin >> bank_account;
+    }
+
+    void setAccount_Name()
+    {
+        cout << " Enter Your Name (For Account) : ";
+        cin >> bank_account_user_name;
+    }
+
+    void setBalance()
+    {
+        cout << " Add Balance : ";
+        cin >> bank_balance;
+    }
+
+    void setSend_balance()
+    {
+        cout << " Send Money : ";
+        cin >> Send_Balance;
+    }
+
+    void setType()
+    {
+        cout << " Account Type : ";
+        cin >> type;
+    }
+
+    int getAccount()
+    {
+        return bank_account;
+    }
+
+    string getAccount_Name()
+    {
+        return bank_account_user_name;
+    }
+
+    string getType()
+    {
+        return type;
+    }
+
+    float getBalance()
+    {
+        return bank_balance;
+    }
+
+    float getSend_Balance()
+    {
+        return Send_Balance;
+    }
+};
+
+
+int main ()
+{
+
+system ("color 06");
+
+    Bank A1;
+
+    A1.setAccount();
+    A1.setAccount_Name();
+    A1.setBalance();
+    A1.setType();
+
+    system ("cls");
+
+    Bank A2;
+
+    A2.setAccount();
+    A2.setAccount_Name();
+    A2.setBalance();
+    A2.setType();
+
+    system ("cls");
+
+    cout << A1.getAccount_Name() <<" transfer money to " << A2.getAccount_Name() << endl;
+    A1.setSend_balance();
+
+    system ("cls");
+
+    cout << "Checking Your Input ";
+    Sleep(1000);
+    cout << ".";
+    Sleep(1000);
+    cout << ".";
+    Sleep(1000);
+    cout << ".";
+    Sleep(1000);
+    cout << ".";
+    Sleep(1300);
+
+    system ("cls");
+
+    cout << "Account has been created and Money transfer completed!!";
+    Sleep(3000);
+
+    system ("cls");
+
+    cout << "------------------------------------------------------------------------------------------------------------" << endl;
+    cout << "------------------------------------------ ABCD Bank -------------------------------------------------------" << endl;
+    cout << "------------------------------------------------------------------------------------------------------------" << endl;
+    cout << "- Account No.     \t: " << A1.getAccount()              << endl;
+    cout << "- Account Name    \t: " << A1.getAccount_Name()         << endl;
+    cout << "- Account Type    \t: " << A1.getType()                 << endl;
+    cout << "- Account Balance \t: " << A1.getBalance()  << " BDT "  << endl;
+    cout << "- New Account Balance ( Money Send : " <<  A1.getSend_Balance() << " )    \t: " << A1.getBalance()- A1.getSend_Balance() << " BDT "  << endl;
+    cout << "------------------------------------------------------------------------------------------------------------" << endl << endl;
+
+    cout << "- Account No.           \t: " << A2.getAccount()               << endl;
+    cout << "- Account Name          \t: " << A2.getAccount_Name()          << endl;
+    cout << "- Account Type          \t: " << A2.getType()                  << endl;
+    cout << "- Old Account Balance   \t: " << A2.getBalance()  << " BDT "   << endl;
+    cout << "- New Account Balance ( Money Received : " <<  A1.getSend_Balance() << " ) \t: " << A2.getBalance() + A1.getSend_Balance() << " BDT " << endl;
+    cout << "------------------------------------------------------------------------------------------------------------" << endl;
+
+    getch();
+    return 0;
+}
